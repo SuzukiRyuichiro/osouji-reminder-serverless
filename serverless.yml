@@ -8,9 +8,20 @@ service: osouji-reminder
 provider:
   name: aws
   runtime: python3.12
+  region: ap-northeast-1
+  profile: scooter_personal
+  stage: dev
+
 
 functions:
   rateHandler:
     handler: handler.run
+    environment:
+      LINE_NOTIFY_CLIENT_TOKEN: ${ssm:/aws/reference/secretsmanager/${sls:stage}/line-notify-client-token}
+    layers:
+      - arn:aws:lambda:ap-northeast-1:770693421928:layer:Klayers-p312-requests:7
     events:
-      - schedule: rate(1 minute)
+      - schedule: rate(1 day)
+
+
+

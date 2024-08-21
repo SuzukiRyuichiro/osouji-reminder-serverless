@@ -1,10 +1,11 @@
-import datetime
-import logging
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
+import requests
+import os
 
 def run(event, context):
-    current_time = datetime.datetime.now().time()
-    logger.info("Your cron function ran at " + str(current_time))
+    url = "https://notify-api.line.me/api/notify"
+    access_token = os.environ['LINE_NOTIFY_CLIENT_TOKEN']
+    headers = {'Authorization': 'Bearer ' + access_token}
+    message = 'お掃除当番表テスト'
+    payload = {'message': message}
+    r = requests.post(url, headers=headers, params=payload,)
+
