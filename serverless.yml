@@ -21,7 +21,6 @@ functions:
     layers:
       - arn:aws:lambda:ap-northeast-1:770693421928:layer:Klayers-p312-requests:7
     events:
-      - schedule: rate(1 day)
-
+      - schedule: cron(00 12 ? * 1 *) # Sundays 9:00 PM Japan time
 
 
