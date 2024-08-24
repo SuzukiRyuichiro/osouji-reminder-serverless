@@ -29,7 +29,7 @@ functions:
       - arn:aws:lambda:ap-northeast-1:770693421928:layer:Klayers-p312-requests:7
     events:
       - schedule: cron(00 12 ? * 1-5 *) # Sun to Thu every night 9:00 PM Japan time
-  dailyTrashDuty:
+  monthlyRentPayment:
     handler: lambdas/monthly_rent_payment.run
     environment:
       LINE_NOTIFY_CLIENT_TOKEN: ${ssm:/aws/reference/secretsmanager/${sls:stage}/line-notify-client-token}
