@@ -20,16 +20,16 @@ def determine_trash(date):
     day_of_month = date.day
 
     if day_of_week == 0 or day_of_week == 3:  # Monday or Thursday
-        return "燃えるゴミ"
+        return "🔥 燃えるゴミ Burnables 🔥"
     elif day_of_week == 1:  # Tuesday
-        return "プラスチック"
+        return "♳ プラスチック Plastic ♳"
     elif day_of_week == 2:  # Wednesday
         # Check if it's the 2nd or 4th Wednesday
         week_of_month = (day_of_month - 1) // 7 + 1
         if week_of_month == 2 or week_of_month == 4:
-            return "燃えないゴミ(金属、電池、ガラス、蛍光灯など)"
+            return "㊎ 燃えないゴミ(金属、電池、ガラス、蛍光灯など) Non burnables 🪫"
     elif day_of_week == 4:  # Friday
-        return "資源(紙、缶、瓶、ペットボトルなど)"
+        return "🧴 資源(紙、缶、瓶、ペットボトルなど) Recyclables 🗞️"
 
 
 def get_tomorrow(datetime_str):

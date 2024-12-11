@@ -20,8 +20,8 @@ def get_week_number(datetime_str):
     return week_number
 
 def get_cleaner_list(week_number):
-    residents = ['かえで', '鈴木', 'ななこ', '恒河', 'SJ']
-    cleaning_tasks = ['トイレ＆シャワー', '洗面所＆キッチン', '床掃除', '共用のタオル', 'ゴミ捨て']
+    residents = ['かえで', '鈴木', 'ななこ', 'Benjamin', 'SJ']
+    cleaning_tasks = ['🚽トイレ＆シャワー🚿', '🚰洗面所＆キッチン🔪', '🧹床掃除🧹', '🧺共用のタオル🫧', '🗑️ゴミ捨て🚮']
 
     # Calculate the starting index based on the week number
     start_index = week_number % len(residents)
